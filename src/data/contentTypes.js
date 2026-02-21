@@ -1,0 +1,75 @@
+export const CONTENT_TYPES = [
+  {
+    id: 'system-prompt',
+    name: 'System Prompt',
+    icon: '⚙',
+    color: '#4A9EFF',
+    defaultTokens: 350,
+    sizesLabel: ['Minimal (~100)', 'Standard (~350)', 'Detailed (~800)', 'Complex (~2000)'],
+    sizes: [100, 350, 800, 2000],
+    description: 'Role instructions & formatting rules',
+  },
+  {
+    id: 'code-file',
+    name: 'Code File',
+    icon: '⌥',
+    color: '#34C759',
+    defaultTokens: 1500,
+    sizesLabel: ['Tiny (~200)', 'Small (~800)', 'Medium (~1500)', 'Large (~4000)'],
+    sizes: [200, 800, 1500, 4000],
+    description: 'Source files, scripts, configs',
+  },
+  {
+    id: 'document',
+    name: 'Document',
+    icon: '◻',
+    color: '#FFD60A',
+    defaultTokens: 1000,
+    sizesLabel: ['1 page (~400)', '3 pages (~1000)', 'Short article (~2500)', 'Full report (~8000)'],
+    sizes: [400, 1000, 2500, 8000],
+    description: 'Text docs, reports, READMEs',
+  },
+  {
+    id: 'chat-history',
+    name: 'Chat History',
+    icon: '◈',
+    color: '#FF9F0A',
+    defaultTokens: 2000,
+    sizesLabel: ['5 msgs (~400)', '20 msgs (~1600)', '50 msgs (~4000)', '100 msgs (~8000)'],
+    sizes: [400, 1600, 4000, 8000],
+    description: 'Prior conversation messages',
+  },
+  {
+    id: 'image',
+    name: 'Image / Vision',
+    icon: '◉',
+    color: '#BF5AF2',
+    defaultTokens: 800,
+    sizesLabel: ['Low-res (~300)', 'Standard (~800)', 'High-res (~1500)', 'Ultra (~3000)'],
+    sizes: [300, 800, 1500, 3000],
+    description: 'Visual content in context',
+  },
+  {
+    id: 'custom',
+    name: 'Custom',
+    icon: '◆',
+    color: '#FF375F',
+    defaultTokens: 500,
+    sizesLabel: ['Small (~250)', 'Medium (~500)', 'Large (~2000)', 'Huge (~10000)'],
+    sizes: [250, 500, 2000, 10000],
+    description: 'Any custom data or text',
+  },
+]
+
+export const getTypeById = (id) => CONTENT_TYPES.find((t) => t.id === id) || CONTENT_TYPES[5]
+
+// Fun real-world equivalents (in tokens)
+export const EQUIVALENTS = [
+  { label: 'paperback novel', tokens: 104000, unit: 'novels', emoji: '📖' },
+  { label: 'Wikipedia article', tokens: 3900, unit: 'Wikipedia articles', emoji: '📚' },
+  { label: 'newspaper page', tokens: 650, unit: 'newspaper pages', emoji: '📰' },
+  { label: 'email', tokens: 260, unit: 'emails', emoji: '✉️' },
+  { label: 'tweet', tokens: 65, unit: 'tweets', emoji: '🐦' },
+  { label: 'hour of speech (transcript)', tokens: 11700, unit: 'hours of speech', emoji: '🎙️' },
+  { label: 'Python file (avg)', tokens: 1200, unit: 'avg Python files', emoji: '🐍' },
+]
